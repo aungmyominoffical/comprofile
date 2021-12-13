@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        li{
+            user-select: none;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+        }
+
+        .slider{
+            height: 10px;
+            transition: 0.5s;
+        }
+
+        .activator{
+            border: 2px solid black;
+        }
+
+    </style>
+</head>
+<body class="bg-light p-5">
+    <div class="contaienr">
+        <div class="tab">
+            <ul class="m-0 position-relative"></ul>
+        </div>
+    </div>
+    <div class="slider bg-warning"></div>
+
+
+    <script>
+        var ul = document.querySelector('ul');
+        var tabs = ['home','about','services','pricing','contact us'];
+        var li = document.querySelectorAll('li');
+        var newArr = Array.prototype.slice.call(liTag);
+        
+
+        var setUnderline = (e) => {
+            var current = e.target.id;
+            var currentId = document.getElementById(current);
+            ulTag.querySelector('.activator').classList.remove('activator');
+            
+            currentId.classList.add('activator'); 
+        }
+
+        for(var i=0;i<tabs.length;i++){
+            li = document.createElement('li');
+            li.append(tabs[i].toUpperCase());
+            li.id = i;
+            ul.append(liTag);
+            li.addEventListener('click',setUnderline);
+        }
+
+        
+
+    </script>
+</body>
+</html>
